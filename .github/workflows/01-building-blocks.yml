@@ -1,0 +1,19 @@
+name: 01_Building_Blocks
+
+on: push
+
+jobs:
+    echo-hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo_output
+              run: echo "Hello from GHA"
+    echo-exit:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Failed exit code
+              run: |
+                echo "Failing step"
+                exit 1
+            - name: Say Goodbye
+              run: echo "Goodbye!"
