@@ -11,9 +11,9 @@ jobs:
     echo-exit:
         runs-on: ubuntu-latest
         steps:
-            - name: Failed exit code
+            - name: success exit code
               run: |
                 echo "Failing step"
-                exit 1
-            - name: Say Goodbye
-              run: echo "Goodbye!"
+                exit 0
+            - name: show calling trigger
+              run: echo "I've been called by the ${{ github.event_name }} event."
